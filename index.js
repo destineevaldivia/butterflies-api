@@ -19,5 +19,9 @@ app.get("/butterflies", (req, res) => {
     res.json("butterflies");
   });
 
+  app.get("/butterflies2", (req, res) => {
+    res.json("butterflies2");
+  });
+
 
   app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
