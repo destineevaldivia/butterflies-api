@@ -12,13 +12,15 @@ const __dirname = path.resolve();
 //configuring cors middleware, this enables the express server to respond to preflight requests
 app.use(cors())
 
-//root route 
+//routes 
 app.get("/", (req, res) => {
     res.json("root");
+    //res.sendFile(path.join(__dirname, 'index.html'));
   });
 
 app.get("/butterflies", (req, res) => {
-    res.json("butterflies");
+    //res.json("butterflies");
+    res.sendFile(path.join(__dirname, 'index.html'));
   });
 
   app.get("/butterflies2", (req, res) => {
