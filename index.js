@@ -1,14 +1,16 @@
 import express from 'express';
-import books from './butterflies.js';
+import butterflies from './butterflies.js';
 import cors from 'cors';
 import path from 'path';
 
 const app = express();
 const PORT = 5001;
 
-app.use(cors())
-
+//The path.resolve() method resolves a sequence of paths into an absolute path
 const __dirname = path.resolve();
+
+//configuring cors middleware, this enables the express server to respond to preflight requests
+app.use(cors())
 
 //root route 
 app.get("/", (req, res) => {
