@@ -38,10 +38,13 @@ app.get('/butterflies', (req, res) => {
 
 
   //UPDATE
+  //update butterfly collection
+  //return the update to the client side
   app.put('/butterflies/:id', (req, res) => {
     //Look up the butterfly
     const id = req.params.id;
     const findB = butterflies.find(findB => findB.id === id);
+    
     if (findB) {
       findB['common name'] = newButterfly['common name'];
       findB['scientific name'] = newButterfly['scientific name'];
@@ -59,13 +62,6 @@ app.get('/butterflies', (req, res) => {
     }
   });
   
-    //validate
-    //if invalid, return 404 
-
-    //update collection
-    //return the update to the client side
-  });
-
   //DELETE
 // app.delete('/butterflies/:id', (req, res) => {
 //   const id = req.params.id;
