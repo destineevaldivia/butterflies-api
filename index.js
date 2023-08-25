@@ -38,22 +38,25 @@ app.get('/butterflies', (req, res) => {
 
 
   //UPDATE
-  //app.put('/butterflies/:id', (req, res) => {
+  app.put('/butterflies/:id', (req, res) => {
     //Look up the butterfly
-    //if invalid, return 404
+    const id = req.params.id;
+    const findB = butterflies.find(findB => findB.id === id);
+
+    if (!findB) res.status(404).send('404 error: bad request');
+  
 
     //validate
     //if invalid, return 404 
 
     //update collection
     //return the update to the client side
-  //});
+  });
 
   //DELETE
-app.delete('/butterflies/:id', (req, res) => {
-  const id = req.params.id;
-  const find
-}
+// app.delete('/butterflies/:id', (req, res) => {
+//   const id = req.params.id;
+// }
 
 
   app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
