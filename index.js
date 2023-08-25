@@ -40,7 +40,7 @@ app.get('/butterflies', (req, res) => {
   //Create 404 msg
 
   //UPDATE
-  app.put('/butterflies/:id', (req, res) => {
+  //app.put('/butterflies/:id', (req, res) => {
     //Look up the butterfly
     //if invalid, return 404
 
@@ -52,5 +52,10 @@ app.get('/butterflies', (req, res) => {
   //});
 
   //DELETE
+app.delete('/butterflies/:id', (req, res) => {
+  const id = req.params.id;
+  const find
+}
+
 
   app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
