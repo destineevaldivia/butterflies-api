@@ -29,8 +29,8 @@ app.get('/butterflies', (req, res) => {
   //CREATE newButterfly
   app.post('/butterflies', (req, res) => {
     const newButterfly = {
-      id: butterflies.length + 1,
-      name: req.body
+      "id": butterflies.length + 1,
+      "name": req.body,
     };
     butterflies.push(newButterfly)
     res.send(newButterfly)
@@ -42,10 +42,23 @@ app.get('/butterflies', (req, res) => {
     //Look up the butterfly
     const id = req.params.id;
     const findB = butterflies.find(findB => findB.id === id);
+    if (findB) {
+      findB['common name'] = newButterfly['common name'];
+      findB['scientific name'] = newButterfly['scientific name'];
+      findB['description'] = newButterfly['description'];
+      findB['habitat'] = newButterfly['habitat'];
+      findB['distribution'] = newButterfly['distribution'];
+      findB['common name'] = newButterfly['common name'];
+      findB['lifecycle stages'] = newButterfly['lifecycle stages'];
+      findB['conservation status'] = newButterfly['conservation status'];
 
-    if (!findB) res.status(404).send('404 error: bad request');
+      res.send("Great job, updating!")
+    }
+    else {
+      res.status(404).send('404 error: not found');
+    }
+  });
   
-
     //validate
     //if invalid, return 404 
 
