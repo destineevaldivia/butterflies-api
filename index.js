@@ -61,11 +61,11 @@ app.get('/butterflies', (req, res) => {
       res.status(404).send('404 error: not found');
     }
   });
-  
+
   //DELETE
-// app.delete('/butterflies/:id', (req, res) => {
-//   const id = req.params.id;
-// }
+app.delete('/butterflies/:id', (req, res) => {
+  
+}
 
 
   app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
