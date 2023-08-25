@@ -40,7 +40,7 @@ app.get('/butterflies', (req, res) => {
   //Create 404 msg
 
   //UPDATE
-  //app.put('/butterflies/:id', (req, res) => {
+  app.put('/butterflies/:id', (req, res) => {
     //Look up the butterfly
     //if invalid, return 404
 
