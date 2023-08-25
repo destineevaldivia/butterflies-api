@@ -36,8 +36,6 @@ app.get('/butterflies', (req, res) => {
     res.send(newButterfly)
   });
 
-  //Next step: *INPUT VALIDATION*  
-  //Create 404 msg
 
   //UPDATE
   //app.put('/butterflies/:id', (req, res) => {
