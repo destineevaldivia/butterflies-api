@@ -13,20 +13,44 @@ const __dirname = path.resolve();
 //configuring cors middleware, this enables the express server to respond to preflight requests
 app.use(cors())
 
-//create endpoints
-app.get("/", (req, res) => {
+//*** app.use(express.json());
+
+//READ endpoints
+app.get('/', (req, res) => {
     //res.json("root");
     res.sendFile(path.join(__dirname, 'index.html'));
   });
 
-app.get("/butterflies", (req, res) => {
-    res.json("butterflies");
+app.get('/butterflies', (req, res) => {
+    res.json(butterflies);
     //res.sendFile(path.join(__dirname, 'index.html'));
   });
 
-  //app.get("/butterflies2", (req, res) => {
-    //res.json("butterflies2");
+  //CREATE newButterfly
+  app.post('/butterflies', (req, res) => {
+    const newButterfly = {
+      id: butterflies.length + 1,
+      name: req.body
+    };
+    butterflies.push(newButterfly)
+    res.send(newButterfly)
+  });
+
+  //Next step: *INPUT VALIDATION*  
+  //Create 404 msg
+
+  //UPDATE
+  //app.put('/butterflies/:id', (req, res) => {
+    //Look up the butterfly
+    //if invalid, return 404
+
+    //validate
+    //if invalid, return 404 
+
+    //update collection
+    //return the update to the client side
   //});
 
+  //DELETE
 
   app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
